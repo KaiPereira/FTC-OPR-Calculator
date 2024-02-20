@@ -1,0 +1,26 @@
+.ranking-grid {
+  display: grid;
+  margin-top: 50px;
+  gap: 20px;
+}
+
+.ranking-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.ranking-align {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+b {
+  font-weight: 800;
+}
+
+.ranking-buttons {
+  display: flex;
+  gap: 20px;
+}
