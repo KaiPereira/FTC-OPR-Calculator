@@ -224,10 +224,14 @@ export default async function handler(req, res) {
     // // solution to the overdetermined system of equations.
     // // Guys, I don't know what this means lol - Kai
     // Calculate the pseudoinverse using js
-    console.log(matches)
     // Sometimes switching between these will fix the determinant is zero error lol
-    // const pseudoinverse = multiply(transpose(matches), inv(multiply(matches, transpose(matches))))
-    const pseudoinverse = matrix(pinv(matches));
+    let pseudoinverse;
+    try {
+        pseudoinverse = multiply(transpose(matches), inv(multiply(matches, transpose(matches))))
+    } catch {
+        pseudoinverse = matrix(pinv(matches));
+    }
+    
     let oprs = multiply(pseudoinverse, scores)
     let auto_performances = multiply(pseudoinverse, autos)
     let ccwms = multiply(pseudoinverse, margins)
