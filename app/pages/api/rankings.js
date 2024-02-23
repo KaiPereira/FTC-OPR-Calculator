@@ -31,18 +31,17 @@ export default async function handler(req, res) {
 
     const document = html.window.document;
 
-
-    // NOTEEE!!!!
+    // New
     // columns[0] = red alliance 1
     // columns[1] = red alliance 2
-    // columns[2] = red endgame
-    // columns[3] = red score
-    // columns[4] = red auto
+    // columns[2] = red score
+    // columns[3] = red auto
+    // columns[4] = red endgame
     // columns[5] = blue alliance 1
     // columns[6] = blue alliance 2
-    // columns[7] = blue endgame
-    // columns[8] = blue score
-    // columns[9] = blue auto
+    // columns[7] = blue score
+    // columns[8] = blue auto
+    // columns[9] = blue endgame
     // columns[10] = Team number
     // columns[11] = Team name
 
@@ -138,17 +137,17 @@ export default async function handler(req, res) {
     for (let i = 0; i < rows_array.length; i++) {
         // All these go red then blue scores
         // Push all scores
-        scores.push(rows_array[i].columns[3])
-        scores.push(rows_array[i].columns[8])
+        scores.push(rows_array[i].columns[2])
+        scores.push(rows_array[i].columns[7])
         // Push all auto's
-        autos.push(rows_array[i].columns[4])
-        autos.push(rows_array[i].columns[9])
+        autos.push(rows_array[i].columns[3])
+        autos.push(rows_array[i].columns[8])
         // Push all margins
-        margins.push(rows_array[i].columns[3] - rows_array[i].columns[8])
-        margins.push(rows_array[i].columns[8] - rows_array[i].columns[3])
+        margins.push(rows_array[i].columns[2] - rows_array[i].columns[7])
+        margins.push(rows_array[i].columns[7] - rows_array[i].columns[2])
         // Push all endgames
-        endgames.push(rows_array[i].columns[2])
-        endgames.push(rows_array[i].columns[7])
+        endgames.push(rows_array[i].columns[4])
+        endgames.push(rows_array[i].columns[9])
     }
 
 
